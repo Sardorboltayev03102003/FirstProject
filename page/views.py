@@ -10,7 +10,7 @@ def reservation_page(request):
         model.person = request.POST.get('person', None)
         model.name = request.POST.get('name', None)
         model.email = request.POST.get('email', None)
-        model.number = request.POST.get('phone', None)
+        model.number = request.POST.get('number', None)
         model.save()
     return render(request, 'reservation.html')
 
