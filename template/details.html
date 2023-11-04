@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="blog-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Blog</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="blog-box-inner">
+						{% for f in details %}
+						<div class="blog-img-box">
+							<img class="img-fluid" src="{{ f.image.url }}" alt="">
+						</div>
+						<div class="blog-detail">
+
+							<h4>{{f.theme}}</h4>
+							<ul>
+								<li><span>{{f.user}}</span></li>
+								<li>|</li>
+								<li><span>{{ f.created_at }}</span></li>
+							</ul>
+							<p>{{f.title}}</p>
+							<p>{{ f.text}}</p>
+							<p>{{ f.text2}}</p>
+							<p>{{ f.text3}}</p>
+
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="">Read More</a>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}
+	<!-- End blog -->
