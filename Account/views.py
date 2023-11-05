@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'contact.html')
 
 
 def login_page(request):
