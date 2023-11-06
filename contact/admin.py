@@ -1,11 +1,18 @@
 from django.contrib import admin
 
-from contact.models import Contact
+from contact.models import Contact, Footer
 
 
 class ContactAdmin(admin.ModelAdmin):
     list_display = ['id', 'full_name', 'email', 'place', 'message',  'created_at']
     search_fields = ['name']
 
-admin.site.register(Contact, ContactAdmin)
+
+
+class FooterAdmin(admin.ModelAdmin):
+    list_display = ('id', 'number', 'email', 'location', 'longitude', 'latitude')
+    search_fields = ('number',)
+
+admin.site.register(Contact, ContactAdmin),
+admin.site.register(Footer, FooterAdmin)
 # Register your models here.
