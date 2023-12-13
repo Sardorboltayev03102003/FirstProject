@@ -23,4 +23,20 @@ class Menu(BaseModel):
 
     class Meta:
         verbose_name = "Menu"
+
+class Menu_Customer(BaseModel):
+    image = models.ImageField(upload_to="media")
+    name = models.CharField(max_length=100)
+    jobs = models.CharField(max_length=100)
+    about = models.TextField()
+
+
+    def __str__(self):
+        return self.name
+
+
+    class Meta:
+        verbose_name = "Customer revirse_"
+
+
 # Create your models here.

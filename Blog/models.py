@@ -16,8 +16,6 @@ class Blog(BaseModel):
 
     def __str__(self):
         return self.theme
-    # def get_absolute_url(self):
-    #     return "/"+str(self.id)+"/"
 
     def get_absolute_url(self):
         return reverse('detail', args=[str(self.id)])

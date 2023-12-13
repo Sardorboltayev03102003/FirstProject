@@ -20,17 +20,19 @@ class Contact(BaseModel):
 
     class Meta:
         verbose_name = "Kontakt"
+
+
 class Footer(models.Model):
-    number=models.CharField(max_length=100,verbose_name="telefon raqam")
-    email=models.EmailField(max_length=100,verbose_name="email")
-    location=models.CharField(max_length=255,verbose_name="manzil")
-    longitude=models.FloatField(verbose_name="manzil kodi")
-    latitude=models.FloatField(verbose_name="latitude")
-    created_at=models.DateTimeField()
+    number = models.CharField(max_length=100, verbose_name="telefon raqam")
+    email = models.EmailField(max_length=100, verbose_name="email")
+    location = models.CharField(max_length=255, verbose_name="manzil")
+    longitude = models.FloatField(verbose_name="manzil kodi")
+    latitude = models.FloatField(verbose_name="latitude")
+    created_at = models.DateTimeField()
 
     def __str__(self):
         return self.number
 
     class Meta:
-        verbose_name="footer qismida malumotlar"
+        verbose_name = "footer qismida malumotlar"
 # Create your models here.

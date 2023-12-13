@@ -4,7 +4,7 @@ from .models import Stuff, Gallery, Reservation
 
 
 class StuffAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'image', 'job']
+    list_display = ['id', 'name', 'image', 'job', 'l_google', 'l_facebook', 'l_twitter']
     search_fields = ['name']
 
 

@@ -63,7 +63,7 @@
 							<a class="nav-link dropdown-toggle" href="#"  data-toggle="dropdown">Blog</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
 								<a class="dropdown-item" href="{% url 'blog' %}">blog</a>
-								<a class="dropdown-item" href="blog-details.html">blog Single</a>
+								<a class="dropdown-item" href="{% url 'detail' %}">blog Single</a>
 							</div>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
@@ -72,8 +72,20 @@
 			</div>
 		</nav>
 	</header>
+	<!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Blog</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Pages -->
+
 	<!-- End header -->
-	<div class="blog-box">
+ <div class="blog-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -84,30 +96,37 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-md-6 col-12">
-					<div class="blog-box-inner">
-						{% for f in details %}
-						<div class="blog-img-box">
-							<img class="img-fluid" src="{{ f.image.url }}" alt="">
+				{% for i in details %}
+				<div class="col-xl-8 col-lg-8 col-12">
+					<div class="blog-inner-details-page">
+						<div class="blog-inner-box">
+							<div class="side-blog-img">
+								<img class="img-fluid" src="{{ i.image.url }}" alt="">
+								<div class="date-blog-up">
+									{{ i.create }}
+								</div>
+							</div>
+							<div class="inner-blog-detail details-page">
+								<h3>{{ i.theme }}</h3>
+								<ul>
+									<li><i class="zmdi zmdi-account"></i>Posted By : <span>{{ i.user }}</span></li>
+									<li>|</li>
+									<li><i class="zmdi zmdi-time"></i>Time : <span>{{ i.created_at }}</span></li>
+								</ul>
+								<p>{{ i.title }}</p>
+								<p>{{ i.text }}</p>
+								<blockquote>
+									<p>{{ i.text2 }}</p>
+								</blockquote>
+								<p>{{ i.text3 }}</p>
+							</div>
 						</div>
-						<div class="blog-detail">
 
-							<h4>{{f.theme}}</h4>
-							<ul>
-								<li><span>{{f.user}}</span></li>
-								<li>|</li>
-								<li><span>{{ f.created_at }}</span></li>
-							</ul>
-							<p>{{f.title}}</p>
-							<p>{{ f.text}}</p>
-							<p>{{ f.text2}}</p>
-							<p>{{ f.text3}}</p>
 
-							<a class="btn btn-lg btn-circle btn-outline-new-white" href="">Read More</a>
-						</div>
-						{% endfor %}
 					</div>
 				</div>
+				{% endfor %}
+
 
 			</div>
 		</div>
@@ -136,7 +155,7 @@
 	<!-- End QT -->
 
 
-	<!-- Start Contact info -->
+		<!-- Start Contact info -->
 	<div class="contact-imfo-box">
 		<div class="container">
 			<div class="row">
@@ -145,7 +164,7 @@
 					<div class="overflow-hidden">
 						<h4>Phone</h4>
 						<p class="lead">
-							+01 123-456-4590
+							+998990113603
 						</p>
 					</div>
 				</div>
@@ -154,7 +173,7 @@
 					<div class="overflow-hidden">
 						<h4>Email</h4>
 						<p class="lead">
-							yourmail@gmail.com
+							boltayevs758@gmail.com
 						</p>
 					</div>
 				</div>
@@ -163,7 +182,7 @@
 					<div class="overflow-hidden">
 						<h4>Location</h4>
 						<p class="lead">
-							800, Lorem Street, US
+							TATU
 						</p>
 					</div>
 				</div>

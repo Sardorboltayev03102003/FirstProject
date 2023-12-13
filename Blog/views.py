@@ -16,16 +16,6 @@ def blog_page(request):
     return render(request, 'blog.html', ctx)
 
 
-
-
-
-# class drugListView(ListView):
-#     model = DrugInfo
-#     template_name = 'home.html'
-
-# class drugDetailView(DetailView):
-#     model = Blog
-#     template_name = 'details.html'
 def details(request):
     details = Blog.objects.all()
     ctx = {

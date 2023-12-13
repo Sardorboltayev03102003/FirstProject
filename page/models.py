@@ -28,6 +28,9 @@ class Stuff(BaseModel):
     name = models.CharField(max_length=100, verbose_name="oshpazni ismi")
     image = models.ImageField(upload_to='image/')
     job = models.CharField(max_length=100, verbose_name="oshpazni turi")
+    l_google = models.URLField()
+    l_facebook = models.URLField()
+    l_twitter = models.URLField()
 
     def __str__(self):
         return self.name

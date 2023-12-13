@@ -3,8 +3,17 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
+from contact.models import Contact
+
 
 def home(request):
+    if request.method == "POST":
+        model = Contact()
+        model.full_name = request.POST.get('full_name', None)
+        model.place = request.POST.get('place', None)
+        model.email = request.POST.get('email', None)
+        model.message = request.POST.get('message', None)
+        model.save()
     return render(request, 'contact.html')
 
 
