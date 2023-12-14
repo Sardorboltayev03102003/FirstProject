@@ -13,6 +13,9 @@ class FooterAdmin(admin.ModelAdmin):
     search_fields = ('number',)
 
 
+
+
+
 admin.site.register(Contact, ContactAdmin),
 admin.site.register(Footer, FooterAdmin)
 # Register your models here.

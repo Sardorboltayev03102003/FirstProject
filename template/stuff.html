@@ -85,8 +85,8 @@
 	</div>
 	<!-- End All Pages -->
 
-	<!-- Start Stuff -->
-	<div class="stuff-box">
+
+		<div class="stuff-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -97,25 +97,26 @@
 				</div>
 			</div>
 			<div class="row">
+				{% for i in stuff %}
 				<div class="col-md-4 col-sm-6">
-					{% for a in stuff %}
 					<div class="our-team">
-						<img src="{{ a.image.url }}">
+						<img src="{{ i.image.url}}">
 						<div class="team-content">
-							<h3 class="title">{{a.name }}</h3>
-							<span class="post">{{ a.job }}</span>
+							<h3 class="title">{{ i.name }</h3>
+							<span class="post">{{ i.job }}</span>
 							<ul class="social">
-								<li><a href="{{ a.l_facebook }}"><i class="fa fa-facebook-f"></i></a></li>
-								<li><a href="{{ a.l_twitter }}"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="{{ a.l_google }}"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="{{ i.l_facebook }}"><i class="fa fa-facebook-f"></i></a></li>
+								<li><a href="{{ i.l_twitter }}"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="{{ i.l_google }}"><i class="fa fa-google-plus"></i></a></li>
+
 							</ul>
 						</div>
 					</div>
-					{% endfor %}
 				</div>
+				{% endfor %}
 			</div>
 		</div>
-
+	</div>
 	<!-- Start QT -->
 	<div class="qt-box qt-background">
 		<div class="container">
@@ -236,6 +237,7 @@
 	<script src="{% static 'js/form-validator.min.js' %}"></script>
     <script src="{% static 'js/contact-form-script.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
+	</div>
 </body>
 {% endblock %}
 </html>

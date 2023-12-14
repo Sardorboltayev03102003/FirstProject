@@ -17,7 +17,7 @@ def blog_page(request):
 
 
 def details(request):
-    details = Blog.objects.all()
+    details = Blog.objects.first()
     ctx = {
         "details": details,
     }

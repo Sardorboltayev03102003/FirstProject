@@ -96,36 +96,36 @@
 				</div>
 			</div>
 			<div class="row">
-				{% for i in details %}
+
 				<div class="col-xl-8 col-lg-8 col-12">
 					<div class="blog-inner-details-page">
 						<div class="blog-inner-box">
 							<div class="side-blog-img">
-								<img class="img-fluid" src="{{ i.image.url }}" alt="">
+								<img class="img-fluid" src="{{ details.image.url }}" alt="">
 								<div class="date-blog-up">
-									{{ i.create }}
+									{{ details.create }}
 								</div>
 							</div>
 							<div class="inner-blog-detail details-page">
-								<h3>{{ i.theme }}</h3>
+								<h3>{{ details.theme }}</h3>
 								<ul>
-									<li><i class="zmdi zmdi-account"></i>Posted By : <span>{{ i.user }}</span></li>
+									<li><i class="zmdi zmdi-account"></i>Posted By : <span>{{ details.user }}</span></li>
 									<li>|</li>
-									<li><i class="zmdi zmdi-time"></i>Time : <span>{{ i.created_at }}</span></li>
+									<li><i class="zmdi zmdi-time"></i>Time : <span>{{ details.created_at }}</span></li>
 								</ul>
-								<p>{{ i.title }}</p>
-								<p>{{ i.text }}</p>
+								<p>{{ details.title }}</p>
+								<p>{{ details.text }}</p>
 								<blockquote>
-									<p>{{ i.text2 }}</p>
+									<p>{{ details.text2 }}</p>
 								</blockquote>
-								<p>{{ i.text3 }}</p>
+								<p>{{ details.text3 }}</p>
 							</div>
 						</div>
 
 
 					</div>
 				</div>
-				{% endfor %}
+
 
 
 			</div>

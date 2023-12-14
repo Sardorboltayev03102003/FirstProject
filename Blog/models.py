@@ -8,7 +8,7 @@ from django.urls import reverse
 class Blog(BaseModel):
     theme = models.CharField(max_length=100, verbose_name='nomi')
     title = models.TextField()
-    text = models.TextField()
+    text = models.TextField(max_length=300)
     text2 = models.TextField()
     text3 = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)

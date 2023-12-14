@@ -86,9 +86,7 @@
 	</div>
 	<!-- End All Pages -->
 
-
-
-
+	<!-- Start blog -->
 	<div class="blog-box">
 		<div class="container">
 			<div class="row">
@@ -99,30 +97,33 @@
 					</div>
 				</div>
 			</div>
-			{% for i in blo %}
-			<div class="row" style="display: flex">
-				<div class="col-lg-4 col-md-2 col-4" >
+			<div class="row">
+				{% for i in blo %}
+				<div class="col-lg-4 col-md-6 col-12">
 					<div class="blog-box-inner">
 						<div class="blog-img-box">
-							<img class="img-fluid" src="{{ i.image.url }}" alt="">
+							<img class="img-fluid" src="{{ i.image.url }} " alt="">
 						</div>
 						<div class="blog-detail">
-							<h4>{{ i.theme }}</h4>
+							<h4>{{i.theme}}</h4>
 							<ul>
 								<li><span>Post by {{ i.user }}</span></li>
 								<li>|</li>
 								<li><span>{{ i.created_at }}</span></li>
 							</ul>
 							<p>{{ i.text }}</p>
- 							<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
+							 <a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
 						</div>
 					</div>
 				</div>
+				{% endfor %}	
 			</div>
-			{% endfor %}
 		</div>
 	</div>
 	<!-- End blog -->
+
+
+
 
 	<!-- Start QT -->
 	<div class="qt-box qt-background">
@@ -137,6 +138,7 @@
 			</div>
 		</div>
 	</div>
+
 	<!-- End QT -->
 
 
