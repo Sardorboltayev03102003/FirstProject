@@ -99,28 +99,30 @@
 
 				<div class="col-xl-8 col-lg-8 col-12">
 					<div class="blog-inner-details-page">
+						{% for i in details %}
 						<div class="blog-inner-box">
 							<div class="side-blog-img">
-								<img class="img-fluid" src="{{ details.image.url }}" alt="">
+								<img class="img-fluid" src="{{ i.image.url }}" alt="">
 								<div class="date-blog-up">
-									{{ details.create }}
+									{{ i.create }}
 								</div>
 							</div>
 							<div class="inner-blog-detail details-page">
-								<h3>{{ details.theme }}</h3>
+								<h3>{{ i.theme }}</h3>
 								<ul>
-									<li><i class="zmdi zmdi-account"></i>Posted By : <span>{{ details.user }}</span></li>
+									<li><i class="zmdi zmdi-account"></i>Posted By : <span>{{ i.user }}</span></li>
 									<li>|</li>
-									<li><i class="zmdi zmdi-time"></i>Time : <span>{{ details.created_at }}</span></li>
+									<li><i class="zmdi zmdi-time"></i>Time : <span>{{ i.created_at }}</span></li>
 								</ul>
-								<p>{{ details.title }}</p>
-								<p>{{ details.text }}</p>
+								<p>{{ i.title }}</p>
+								<p>{{ i.text }}</p>
 								<blockquote>
-									<p>{{ details.text2 }}</p>
+									<p>{{ i.text2 }}</p>
 								</blockquote>
-								<p>{{ details.text3 }}</p>
+								<p>{{ i.text3 }}</p>
 							</div>
 						</div>
+						{% endfor %}
 
 
 					</div>
